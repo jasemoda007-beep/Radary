@@ -11,11 +11,12 @@ jobs:
     runs-on: macos-latest
 
     steps:
+    # تحديث إلى v4 لضمان التوافق
     - name: Checkout Project Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup Theos
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: theos/theos
         path: theos
@@ -25,7 +26,7 @@ jobs:
       run: echo "THEOS=$GITHUB_WORKSPACE/theos" >> $GITHUB_ENV
 
     - name: Setup iOS SDKs
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: theos/sdks
         path: theos/sdks
@@ -34,8 +35,9 @@ jobs:
       run: |
         make package FINALPACKAGE=1
 
+    # تحديث الإصدار هنا من v3 إلى v4 لحل المشكلة نهائياً
     - name: Upload Compiled Tweak
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Wessam-VIP-Hack
         path: packages/*.deb
