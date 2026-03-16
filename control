@@ -1,0 +1,9 @@
+Package: com.wessam.vip
+Name: Wessam VIP
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: VIP Mod Menu for PUBG Mobile by Wessam
+Maintainer: Wessam
+Author: Wessam
+Section: Tweaks
